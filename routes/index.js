@@ -3,5 +3,5 @@
  */
 
 exports.index = function(req, res, next){
-  res.render('index', { title: 'Tweet visualization', criteria:'New York state' });
+  res.render('index', { title: 'Tweet visualization', criteria:'Sentiment' });
 };
