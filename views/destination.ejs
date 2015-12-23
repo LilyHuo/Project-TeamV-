@@ -1,0 +1,269 @@
+<!-- views/destination.ejs -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FollowMe</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Page styles -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet" media="screen">
+	<link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/test.css">
+    <link rel="stylesheet" href="stylesheets/star.css">
+
+	<link rel="stylesheet" type="text/css" href="stylesheets/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/css/default.css">
+	<link rel="stylesheet" href="stylesheets/material.min.css">
+    
+	<!-- Global CSS for the page and tiles -->
+  	<link rel="stylesheet" href="stylesheets/css/main.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+	<div class="htmleaf-container">
+		<!--<header class="htmleaf-header">
+			<h1>Filter by Destinations</h1>
+		</header>-->
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="submit" style="background-color:transparent; border-color:transparent;"> 
+              <img src="images/FM_logo.jpg" class="img-rounded" height="38" href="/"/>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class="nav navbar-nav navbar-right">
+            <li id="signup"><a href="#">SIGN UP</a></li>
+            <li id="signin"><a href="#">SIGN IN</a></li>
+            <li id="surprise"><a href="/">HOME</a></li>
+          </div>
+
+          <form class="navbar-form">
+            <div class="input-group">
+              <input type="text" id='link_id' class="form-control" placeholder="Search for...">
+              <div class="input-group-btn">
+                <button type="button" id='link_str' class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search </button>
+            </div><!-- /btn-group -->
+           </div><!-- /input-group -->
+            <!--<div class="col-lg-6"></div><!-- /.col-lg-6 -->
+         </form>
+        </div><!-- /.navbar-collapse -->
+      </div> <!--.container-fluid -->
+    </nav>
+
+		
+
+
+		<div role="main">
+	      	<ul id="container" class="tiles-wrap animated">      </ul>
+    	</div>
+    	
+	
+	</div>
+	
+	<div id="myModal_login" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h3 id="login-title" class="modal-title">Login</h3>
+        </div>
+        <div id="login-body" class="modal-body">
+           <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+           <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+  
+        <form action="/login" method="post">
+                  <!--action="http://localhost:8080/login"-->
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" name="email">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password">
+                  </div>
+                  <button type="submit" class="btn btn-warning btn-lg">Login</button>
+                   <hr>
+                <p>Need an account? <a href="/signup">Signup</a></p>
+                <p>Or go <a href="/">home</a>.</p>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+         </div>
+        </div>
+    </div>
+
+    <div id="myModal_signup" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h3 id="signup-title" class="modal-title">Signup</h3>
+        </div>
+        <div id="signup-body" class="modal-body">
+           <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+           <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+  
+        <form action="/signup" method="post">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password">
+          </div>
+
+          <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+        </form>
+
+        <hr>
+
+        <p>Already have an account? <a href="/login">Login</a></p>
+        <p>Or go <a href="/">home</a>.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+      </div>
+      </div>
+    </div>
+	<!--<script type="text/javascript" src="js/dest1.js"></script>-->
+	<script type="text/javascript">
+	document.getElementById('link_str').onclick = function(){
+		//var temp_p = '<li><img src="{{src}}" width="200" height="300"> <p>{{p}}</p></li>';
+		//var str = "";
+		//imgurl = "img/image_1.jpg";
+		//address = "p";
+		//str += temp_p.replace("{{src}}", imgurl);
+		//str += temp_p.replace("{{p}}", address);
+		//$(str).appendTo("#container");
+
+		//$("li").appendTo("#container");
+		var address = document.getElementById('link_id').value;
+		var geocoder = new google.maps.Geocoder();
+		var url = null;
+		geocoder.geocode( { 'address': address}, function(results, status) {
+			if (status == google.maps.GeocoderStatus.OK) {
+				var latitude = parseFloat(results[0].geometry.location.lat());
+				var longitude = parseFloat(results[0].geometry.location.lng());
+				var minx = (longitude-0.5);
+				var maxx = (longitude+0.5);
+				var miny = (latitude-0.5);
+				var maxy = (latitude+0.5);
+				url = "http://www.panoramio.com/map/get_panoramas.php?set=public&from=0&to=30&minx="+minx+"&miny="+miny+"&maxx="+maxx+"&maxy="+maxy+"&size=medium&mapfilter=true&callback=?";
+				console.log(url);
+				var temp_p = '<li><img src="img/image_1.jpg" width="200" height="300"> <p>seac</p></li>';
+	//var container1 = $("#container");
+	            $.getJSON(url, function(json){
+	            	var i =0;
+	            	for(i=0;i<json.photos.length;i++){
+				//var imgurl = "img/image_1.jpg";
+				var imgurl ="http://static.panoramio.com/photos/large/"+json.photos[i].photo_url.replace(/[^0-9]/ig,"")+".jpg";
+				console.log(imgurl);
+				//console.log(json.photos[i].photo_url)
+				//var img = document.createElement("img");
+				//img.src = imgurl;
+				//img.className = "image";
+				//document.body.appendChild(img);
+				
+				var str = "";
+				
+				str = temp_p.replace("seac", address);
+				str = str.replace("img/image_1.jpg", imgurl);
+
+				$(str).appendTo("#container");
+
+			} }); 
+			}
+			});
+};
+	
+
+	
+   </script>
+	<!-- include jQuery -->
+	<script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js"></script>
+	  <!-- Include the imagesLoaded plug-in -->
+  	<script src="/javascripts/imagesloaded.pkgd.min.js"></script>
+
+	  <!-- Include the plug-in -->
+	  <script src="/javascripts/wookmark.js"></script>
+
+	  <!-- Once the page is loaded, initalize the plug-in. -->
+	  <script type="text/javascript">
+	    (function ($) {
+	      // Instantiate wookmark after all images have been loaded
+	      var wookmark,
+	          container = '#container',
+	          $container = $(container),
+	          $window = $(window),
+	          $document = $(document);
+
+	      imagesLoaded(container, function () {
+	        wookmark = new Wookmark(container, {
+	          offset: 20, // Optional, the distance between grid items
+	          itemWidth: 210 // Optional, the width of a grid item
+	        });
+	      });
+
+	      /**
+	       * When scrolled all the way to the bottom, add more tiles
+	       */
+	      function onScroll() {
+	        // Check if we're within 100 pixels of the bottom edge of the broser window.
+	        var winHeight = window.innerHeight ? window.innerHeight : $window.height(), // iphone fix
+	            closeToBottom = ($window.scrollTop() + winHeight > $document.height() - 100);
+
+	        if (closeToBottom) {
+	          // Get the first then items from the grid, clone them, and add them to the bottom of the grid
+	          var $items = $('li', $container),
+	              $firstTen = $items.slice(0, 10).clone().css('opacity', 0);
+	          $container.append($firstTen);
+
+	          wookmark.initItems();
+	          wookmark.layout(true, function () {
+	            // Fade in items after layout
+	            setTimeout(function() {
+	              $firstTen.css('opacity', 1);
+	            }, 300);
+	          });
+	        }
+	      };
+
+	      $window.bind('scroll.wookmark', onScroll);
+	    })(jQuery);
+	  </script>
+	  
+     <script type="text/javascript">
+      $('#signup').click(function(){
+          $('#myModal_signup').modal({show:true});
+      });
+    </script>
+    <script type="text/javascript">
+      $('#signin').click(function(){
+          $('#myModal_login').modal({show:true});
+      });
+    </script>
+<script src="/javascripts/material.min.js"></script>
+    <script src="/javascripts/jquery-1.11.3.min.js"></script>
+    <script src="/javascripts/jquery.waterfall.js"></script>
+    <script src="/javascripts/jquery.rateit.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<a onclick="scroll(0,0)" id="TOP" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">Top</a>
+    
+</body>
+</html>
