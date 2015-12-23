@@ -1,209 +1,401 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
-        <title>TwitterMap</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="RuiLu">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FollowMe</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Page styles -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="stylesheets/material.min.css">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/test.css">
+    <link rel="stylesheet" href="stylesheets/star.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="submit" style="background-color:transparent; border-color:transparent;"> 
+              <img src="images/FM_logo.jpg" class="img-rounded" height="38"/>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class="nav navbar-nav navbar-right">
+            <li id="signup"><a href="#">SIGN UP</a></li>
+            <li id="signin"><a href="#">SIGN IN</a></li>
 
-        <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
-        <style>
-            body {
-                padding-top: 60px;
-            }
-        </style>
-        <link href="stylesheets/bootstrap-responsive.min.css" rel="stylesheet">
-        <link href="stylesheets/app.css" rel="stylesheet">
+            <li id="surprise"><a href="/file">PROFILE</a></li>
+          </div>
+         
 
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+<!-- Split button
 
-        <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/assets/ico/favicon.ico">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
-        <style type="text/css"></style>
-    </head>
+ <div class="input-group">
+              <input id='link_ctnt' type="text" class="form-control" placeholder="Search for..." >
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li id="dest_c"><a href="/destination" >Destination</a></li>
+                  <li id="range_c"><a class="range-click" href="/range" >Range</a></li>
+                </ul>
+            </div>
+           </div>
+ -->
 
-    <body>
-        
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container-fluid">
-                    <a class="brand" href="/"><span style="color: #58ACFA;font-weight: bold">TwitterMap</span> 
-                        <span style="color: #E6E6E6;font-weight: lighter"> See What is happening</span>
-                    </a>
-                    <div class="nav-collapse collapse">
-                        <p class="navbar-text pull-right">
-                              <span style="color: #01A9DB; font-weight: bold">Search Keyword: </span>
-                              <span id="keycriteria" class="label label-info">the</span>
-                              <span style="color: #31B404; font-weight: bold">Positive: </span>
-                              <span id="positive" class="label label-pill label-success">0</span>
-                              <span style="color: #FE9A2E; font-weight: bold">Neutral: </span>
-                              <span id="neutral" class="label label-pill label-warning">0</span>
-                              <span style="color: #DF3A01; font-weight: bold">Negative: </span>
-                              <span id="negative" class="label label-pill label-important">0</span>
-                        </p>
+
+
+         <form class="navbar-form">
+            <div class="btn-group pull-right">
+              <button type="button" class="btn btn-default">    HAVE SOMETHING TO FIND ?  </button>
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="\destination">SEARCH BY DESTINATION ! </a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="\range">SEARCH BY RANGE ! </a></li>
+  </ul>
+</div>
+         </form>
+
+
+
+
+        </div><!-- /.navbar-collapse -->
+      </div> <!--.container-fluid -->
+    </nav>
+
+    <div class="content">
+      <div id="div1">
+
+            <div class="box">
+                <a title="Great Wall of China">
+                      <img src="http://i3.bbs.fd.zol-img.com.cn/t_s800x5000/g4/M09/08/0B/Cg-4WlIxjiKIT5VAABHwWXEk6IUAALh3wMmjM0AEfBx049.jpg" alt="" class="img-thumbnail" id="main-pic">
+                </a>
+                </br>
+                <div class="divs">
+                      <div class="pic-info"><a id="pic-info" href="http://bbs.zol.com.cn/dcbbs/d167_128625.html#picIndex4">bbs.zol.com</a></div>
+                      <div class="like"><a href=""><img class="img-circle" src="images/like.png"></a></div>
+                </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="description">
+                      <p>Juyongguan or Juyong Pass is a mountain pass located in the Changping District of Beijing Municipality, over 50 kilometers from central Beijing. The Great Wall of China passes through, and the Cloud Platform was built here in the year 1342.</p>
+                </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="user-info">
+
+                </div>
+            </div>
+
+            <div class="box">
+                <a title="Coffee">
+                  <img src="https://unsplash.it/800/600?image=30" class="img-thumbnail" id="main-pic">
+                </a>
+                </br>
+                <div class="divs">
+                    <div class="pic-info"><a id="pic-info" href="http://www.starbucks.com">I don't know where it is from</a></div>
+                    <div class="like">
+                      <img class="img-circle" src="images/like.png" onclick="">
                     </div>
                 </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="description">
+                    <p>Our signature iced coffee blend was created intentionally to be served cold. It is smooth and balanced with rich caramel flavors and refreshing citrus notes, making it easy to enjoy whether you want a pick-me-up or moment to relax.</p>
+                </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="user-info">
+
+                </div>
+            </div>
+            <div class="box">
+                <a title="Golden Gate Bridge">
+                      <img src="http://static1.squarespace.com/static/547f29bfe4b0dc192ed7bdac/54aeb15ce4b018c14f34c7cb/54aeb160e4b018c14f34c7ed/1420734817363/san-franc.jpg?format=2500w" alt="" class="img-thumbnail" id="main-pic">
+                </a>
+                </br>
+                <div class="divs">
+                      <div class="pic-info"><a id="pic-info" href="https://www.google.com/search?q=%E9%87%91%E9%97%A8%E5%A4%A7%E6%A1%A5&biw=1249&bih=682&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjTnfnW3ubJAhVLHx4KHdIHArIQ_AUIBygC">from google image</a></div>
+                      <div class="like"><a href=""><img class="img-circle" src="images/like.png"></a></div>
+                </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="description">
+                      <p>The Golden Gate Bridge is a suspension bridge spanning the Golden Gate strait, the one-mile-wide (1.6 km), three-mile-long (4.8 km) channel between San Francisco Bay and the Pacific Ocean.</p>
+                </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="user-info">
+
+                </div>
+            </div>
+            <div class="box">
+                <a title="Yellowstone National Park">
+                      <img src="http://nuscimag.com/wp-content/uploads/2015/04/Beehive_geyser_yellowstone_groot.jpg" class="img-thumbnail" id="main-pic">
+                </a>
+                </br>
+                <div class="divs">
+                      <div class="pic-info"><a id="pic-info" href="https://en.wikipedia.org/wiki/Yellowstone_National_Park">from Wikipedia</a></div>
+                      <div class="like"><a href=""><img class="img-circle" src="images/like.png"></a></div>
+                </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="description">
+                      <p>TYellowstone National Park is a national park located primarily in the U.S. state of Wyoming, although it also extends into Montana and Idaho.</p>
+                </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="user-info">
+
+                </div>
+            </div>
+            <div class="box">
+                <a title="Dubai Tower">
+                      <img src="http://77fkpo.com5.z0.glb.clouddn.com/6d63b202c34f4edb03a9e96c52272d29.jpg" alt="" class="img-thumbnail" id="main-pic">
+                </a>
+                </br>
+                <div class="divs">
+                      <div class="pic-info"><a id="pic-info" href="http://www.dubai.com/">from www.dubai.com</a></div>
+                      <div class="like"><a href=""><img class="img-circle" src="images/like.png"></a></div>
+                </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="description">
+                      <p>Dubai is a city in the United Arab Emirates known for luxury shopping, ultramodern architecture and a lively nightlife scene. Burj Khalifa, an 830m-tall tower, dominates the skyscraper-filled skyline. At its foot lies Dubai Fountain, with jets and lights choreographed to music. On man-made islands just offshore is Atlantis, the Palm, a resort with water and marine-animal parks.</p>
+                </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="user-info">
+
+                </div>
+            </div>
+            <div class="box">
+                <a title="Flatiron Building">
+                      <img src="http://xfwharmoniadigitalcom.c.presscdn.com/wp-content/uploads/2014/09/The-Flatiron-Building-New-York.jpg" alt="" class="img-thumbnail" id="main-pic">
+                </a>
+                </br>
+                <div class="divs">
+                      <div class="pic-info"><a id="pic-info" href="http://www.history.com/topics/flatiron-building">from www.history.com</a></div>
+                      <div class="like"><a href=""><img class="img-circle" src="images/like.png"></a></div>
+                </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="description">
+                      <p>The distinctive triangular shape of the Flatiron Building, designed by Chicago architect Daniel Burnham and built in 1902, allowed it to fill the wedge-shaped property located at the intersection of Fifth Avenue and Broadway.</p>
+                </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="user-info">
+
+                </div>
+            </div>
+            <div class="box">
+                <a title="Guilin">
+                      <img src="http://210.51.56.58/fileupload/txtimage/201109141550555468.jpg" alt="" class="img-thumbnail" id="main-pic">
+                </a>
+                </br>
+                <div class="divs">
+                      <div class="pic-info"><a id="pic-info" href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10095.html">来自蚂蜂窝</a></div>
+                      <div class="like"><a href=""><img class="img-circle" src="images/like.png"></a></div>
+                </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="description">
+                      <p>桂林位于广西壮族自治区东北部，在“湘西走廊”南端，自古享有“山水甲天下”之美誉。往往是还没有到桂林，就被她的美名所吸引，总想精心准备一个假期、一份心情去细细体味这里的山水、人情、风俗和悠闲舒适的生活。</p>
+                </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="user-info">
+
+                </div>
+            </div> 
+            <div class="box">
+                <a title="Hollywood">
+                      <img src="http://thecultureur.com/wp-content/uploads/2012/10/living-los-angeles.jpeg" alt="" class="img-thumbnail" id="main-pic">
+                </a>
+                </br>
+                <div class="divs">
+                      <div class="pic-info"><a id="pic-info" href="http://www.hollywood.com/">from Hollywood.com</a></div>
+                      <div class="like"><a href=""><img class="img-circle" src="images/like.png"></a></div>
+                </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="description">
+                      <p>Hollywood is a neighborhood in the central region of Los Angeles, California. Also colloquially known as Tinseltown after its flashy style, the neighborhood is notable for its place as the home of the film industry, including several of its historic studios. Its name has come to be a metonym for the motion picture industry of the United States. Hollywood is also a highly ethnically diverse, densely populated, economically diverse neighborhood and retail business district.</p>
+                </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="user-info">
+
+                </div>
+            </div> 
+            <div class="box">
+                <a title="Columbia University">
+                      <img src="http://www.gocolumbialions.com/pics33/1024/ZT/ZTQAKJDQRNAODAZ.20131017184301.jpg" alt="" class="img-thumbnail" id="main-pic">
+                </a>
+                </br>
+                <div class="divs">
+                      <div class="pic-info"><a id="pic-info" href="http://www.columbia.edu/">from Columbia University main page</a></div>
+                      <div class="like"><a href=""><img class="img-circle" src="images/like.png"></a></div>
+                </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="description">
+                      <p>Columbia University was founded in 1754 as King's College by royal charter of King George II of England. It is the oldest institution of higher learning in the state of New York and the fifth oldest in the United States.</p>
+                </div>
+                <hr width=100% size=3 color=#C0C0C0 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)">
+                <div class="user-info">
+
+                </div>
+            </div>
+            
+      </div>
+    </div>  
+
+    <div id="myModal" class="modal fade">
+        <div class="modal-dillog" id="close-dialog">
+            <div class="modal-footer">
+              <!-- <a href="#" class="btn btn-default" data-dismiss="modal">Close</a> -->
+              <a onclick="scroll(0,0)" id="CLOSE" data-dismiss="modal" class="btn btn-default" style="color:#FFFFFF; font-weight: bold">CLOSE</a>
             </div>
         </div>
 
-
-        <div class="container-fluid">
-            <div class="row_fluid">
-                
-                <div class="span4">
-                    <span style="color: #000000; font-size: 14pt; font-weight: bold">Key Word</span>
-                    <span style="color: #FFFFFF; font-size: 4pt; font-weight: bold">I choose Captain America!</span>
-                    <div class="row-fluid">
-                        <div class="span3">
-                            <select class="form-control" name="sel-keywords" id="sel-keywords">
-                                <option>the</option>
-                                <option>you</option>
-                                <option>are</option>
-                                <option>is</option>
-                                <option>sport</option>
-                                <option>food</option>
-                                <option>music</option>
-                                <option>game</option>
-                            </select>
-                        </div>
-                        <div class="span1"></div>
-                    </div>
-                    <span style="color: #000000; font-size: 14pt; font-weight: bold">Map Type</span>
-                    <span style="color: #FFFFFF; font-size: 4pt; font-weight: bold">"So was I"</span>
-                    <div class="row-fluid">
-                        <div class="span4">
-                            <select class="form-control" name="sel-maptype" id="sel-maptype">
-                                <option>Scatter</option>
-                                <option>HeatMap</option>
-                                <option>Sentiment</option>
-                            </select>                  
-                        </div>
-                        <div class="span4">
-                            <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
-                              Cluster
-                            </button>          
-                        </div>
-                    </div>
-                
-                    <div class="accordion-group">
-                        <div class="breadcrumb" id="breadcrumb_a">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                                <i class="icon-minus icon-white"></i>
-                                Tweets with Geo information
-                            </a>
-
-                            <div class="tooltip-box" style="float: right">
-                                <a href="#" rel="tooltip" data-placement="top" data-original-title="The list of tweets with geo information">
-                                    <i class="icon-info-sign icon-white"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- <span style="color: #000000; font-size: 14pt; font-weight: bold">Tweets with Geo information</span> -->
-                        <div class="accordion-body collapse" id="collapse2">
-                            <div class="accordion-inner" id="tableinner">
-                                <div class="widgetblock" id="tweetswithgeotag">
-                                    <table class="table table-striped" id="geotweetstable">
-                                        <thead></thead>
-                                        <tbody></tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="modal-dialog" id="pic-dialog">
+            <div class="modal-content">
+                <div class="modal-header" id="pic-header">
+                    <img src="images/pic_logo.jpg" style="width:30px; height:30px" align="left"/>
+                    <h4 class="modal-title" id="header-font">Heading</h4>
                 </div>
-                <!-- then map -->
-                <div class="span8">
-                    <div class="accordion" id="accordion">
-                        <div class="breadcrumb" id="breadcrumb_b">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1"><i class="icon-minus icon-white"></i> Tweets Map
-                            </a>
-                            <button id="clearMapButton" type="button" class="btn btn-success btn-mini btn-primary" style="float: right">Clear all</button>
-                        </div>
-                        <div id="collapse1" class="accordion-body collpase">
-                            <div class="accordion-inner">
-                                <div id="map"></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="modal-body" id="pic-modal">
                 </div>
             </div>
-            <div class="row_fluid">
-                    <div class="row-fluid">
-                        
-                        <span style="font-size: 14pt; color: #58ACFA; font-weight: bold">Trends </span> 
-                        <span style="font-size: 9pt; color: #000000">(pls choose a city)</span>
-                        <span style="color: #FFFFFF">L</span>
-                        <select class="form-control-trends" name="sel-trends" id="sel-trends">
-                            <option>Worldwide</option>
-                            <option>New York</option>
-                            <option>Los Angeles</option>
-                            <option>Toronto</option>
-                            <option>London</option>
-                            <option>Rio de Janeiro</option>
-                            <option>Paris</option>
-                            <option>Tokyo</option>
-                        </select>
-                        <span style="color: #FFFFFF">hehe</span>
-                        <span id="1" class="label label-default">Default Label</span>
-                        <span id="2" class="label label-important">Primary Label</span>
-                        <span id="3" class="label label-success">Success Label</span>
-                        <span id="4" class="label label-info">Info Label</span>
-                        <span id="5" class="label label-warning">Warning Label</span>
-                        <span id="6" class="label label-default">Danger Label</span>
-                        <span id="7" class="label label-important">Default Label</span>
-                        <span id="8" class="label label-success">Primary Label</span>
-                        <span id="9" class="label label-info">Success Label</span>
-                        <span id="10" class="label label-warning">Info Label</span>
-                    </div>
-            </div>
-            
-            <hr>
-            
         </div>
-        <footer class>
-            <div class="container text-muted text-center">
-                <h5>&copy; Rui Lu © CloudComputing@Fall2015</h5>
-            </div>
-        </footer>
-
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script src="http://www.google.com/jsapi"></script>
-        <script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0/src/data.json" type="text/javascript"></script>
-        <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0/src/markerclusterer.js"></script>
-        <script src="javascripts/bootstrap.min.js"></script>
-        <script src="/socket.io/socket.io.js"></script>
         
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
-        <script src="/javascripts/socket.js"></script>
-        <script type="text/javascript">
-            $(".collapse").collapse();
-            $('#accordion').collapse({hide: true})
-            $(".accordion-toggle").click(function() {
-                var imgElement =$(this).find('i:first');
-                if(imgElement.attr('class')==="icon-minus icon-white"){
-                    imgElement.attr('class','icon-plus icon-white');
-                } else {
-                    imgElement.attr('class','icon-minus icon-white');
-                }
-            });
-            $('#tweetsTab a').click(function (e) {
-                e.preventDefault();
-                $(this).tab('show');
-            });
-            $('#tweetsTab a:first').tab('show');
+        <div class="modal-dialog" id="map-dialog">
+            <div class="modal-content" id="scenery-info">
+                <div class="modal-header">
+                    <div id="map"></div>
+                    <div>
+                        <h5 class="modal-title" id="map-header">MapHeading</h5>
+                        <!-- <button type="button" class="btn btn-success" id="direction">direction</button> -->
+                        </br>
+                    </div>
+              
+                    <div id="information">
+                        <!-- from wikipedia -->
+                    </div> 
+                    <div id="addr">
+                    </div>
+                    <div id="geo">
+                    </div>
+                    <div id="oh">
+                    </div>
+                    <div id="website">
+                    </div>
+                    <div id="rating">
+                    </div>
+                    <!-- <div class="rateit" data-rateit-value="3.2" data-rateit-ispreset="true" data-rateit-readonly="true"></div> -->
 
-            $('.tooltip-box').tooltip({
-                selector: "a[rel=tooltip]"
-            })
-        </script>
+                    <div id="review">
+                    </div>
+                    <div id="photos">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 
-    </body>
+
+    <a onclick="scroll(0,0)" id="TOP" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">Top</a>
+ 
+
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvVUcFOzow42qQifTc51nqSVqg8fHI4xk&signed_in=true&libraries=places&callback=initMap" async defer></script> -->
+    
+    <script src="/javascripts/material.min.js"></script>
+    <script src="/javascripts/jquery-1.11.3.min.js"></script>
+    <script src="/javascripts/jquery.waterfall.js"></script>
+    <script src="/javascripts/jquery.rateit.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="/javascripts/test3.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization&libraries=places"></script>
+
+   <!--  // <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvVUcFOzow42qQifTc51nqSVqg8fHI4xk&libraries=places"></script> -->
+    <div id="myModal_login" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h3 id="login-title" class="modal-title">Login</h3>
+        </div>
+        <div id="login-body" class="modal-body">
+           <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+           <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+  
+        <form action="/login" method="post">
+                  <!--action="http://localhost:8080/login"-->
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" name="email">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password">
+                  </div>
+                  <button type="submit" class="btn btn-warning btn-lg">Login</button>
+                   <hr>
+                <p>Need an account? <a href="/signup">Signup</a></p>
+                <p>Or go <a href="/">home</a>.</p>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+         </div>
+        </div>
+    </div>
+
+    <div id="myModal_signup" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h3 id="signup-title" class="modal-title">Signup</h3>
+        </div>
+        <div id="signup-body" class="modal-body">
+           <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+           <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+  
+        <form action="/signup" method="post">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password">
+          </div>
+
+          <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+        </form>
+
+        <hr>
+
+        <p>Already have an account? <a href="/login">Login</a></p>
+        <p>Or go <a href="/">home</a>.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+      </div>
+      </div>
+    </div>
+     <script type="text/javascript">
+      $('#signup').click(function(){
+          $('#myModal_signup').modal({show:true});
+      });
+    </script>
+    <script type="text/javascript">
+      $('#signin').click(function(){
+          $('#myModal_login').modal({show:true});
+      });
+    </script>
+
+    
+    
+
+   
+  </body>
 </html>
